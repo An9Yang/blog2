@@ -1,44 +1,48 @@
 import { Link } from "react-router-dom";
-import { Search, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {
+  Search,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Mail,
+  ChevronDown,
+} from "lucide-react";
 
 export default function Home() {
+  const navLinkClass =
+    "text-[15px] font-medium text-slate-600 hover:text-slate-900 transition-colors";
+  const iconButtonClass =
+    "flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition-colors hover:border-blue-500 hover:text-blue-600";
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#F5F7FB]">
       {/* Navigation Bar */}
-      <nav className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <nav className="border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-20 items-center">
             {/* Left Navigation Links */}
-            <div className="flex items-center space-x-8">
-              <Link
-                to="/blogs"
-                className="text-gray-900 hover:text-gray-600 font-medium text-sm"
-              >
+            <div className="flex flex-1 items-center gap-9">
+              <Link to="/blogs" className={navLinkClass}>
                 Blogs
               </Link>
-              <Link
-                to="/categories"
-                className="text-gray-900 hover:text-gray-600 font-medium text-sm"
-              >
-                Categories
+              <Link to="/categories" className="flex items-center gap-1">
+                <span className={navLinkClass}>Categories</span>
+                <ChevronDown className="h-4 w-4 text-slate-400" />
               </Link>
-              <Link
-                to="/contact"
-                className="text-gray-900 hover:text-gray-600 font-medium text-sm"
-              >
+              <Link to="/contact" className={navLinkClass}>
                 Contact
               </Link>
             </div>
 
             {/* Center Logo */}
-            <div className="absolute left-1/2 transform -translate-x-1/2">
-              <Link to="/" className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+            <div className="flex flex-1 justify-center">
+              <Link to="/" className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-blue-600">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
-                    className="w-5 h-5 text-white"
+                    className="h-5 w-5 text-white"
                   >
                     <path
                       d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
@@ -65,41 +69,51 @@ export default function Home() {
             </div>
 
             {/* Right Icons */}
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="icon" className="text-gray-600">
-                <Search className="w-5 h-5" />
-              </Button>
+            <div className="flex flex-1 items-center justify-end gap-3">
+              <button
+                type="button"
+                className={`${iconButtonClass} hover:bg-blue-50`}
+                aria-label="Search"
+              >
+                <Search className="h-5 w-5" />
+              </button>
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:text-blue-700"
+                className={`${iconButtonClass} hover:bg-blue-50`}
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:hello@readx.com"
+                className={`${iconButtonClass} hover:bg-blue-50`}
+              >
+                <Mail className="h-5 w-5" />
               </a>
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-500"
+                className={`${iconButtonClass} hover:bg-blue-50`}
               >
-                <Twitter className="w-5 h-5" />
+                <Twitter className="h-5 w-5" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-700 hover:text-blue-800"
+                className={`${iconButtonClass} hover:bg-blue-50`}
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-pink-600 hover:text-pink-700"
+                className={`${iconButtonClass} hover:bg-blue-50`}
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -107,118 +121,111 @@ export default function Home() {
       </nav>
 
       {/* Hero Title Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#F5F7FB] py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="mb-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
               Blog & Resources
             </h1>
-            <div className="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            <div className="mx-auto h-1 w-20 rounded-full bg-blue-600"></div>
           </div>
         </div>
       </section>
 
       {/* Blog Cards Section */}
-      <section className="pb-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <section className="bg-[#F5F7FB] pb-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-12 lg:grid lg:grid-cols-[540px_minmax(0,1fr)] lg:items-start lg:gap-y-12 lg:gap-x-11 xl:grid-cols-[560px_minmax(0,1fr)]">
             {/* Large Featured Card - Left Side */}
-            <div className="lg:col-span-2">
+            <div className="flex justify-center lg:justify-start">
               <Link
                 to="/blog/digital-transformation"
-                className="group block relative rounded-2xl overflow-hidden h-[500px]"
+                className="group relative block w-full max-w-[480px] overflow-hidden rounded-[32px] shadow-[0_30px_60px_-32px_rgba(15,23,42,0.65)] sm:aspect-square lg:max-w-[540px] lg:aspect-auto lg:h-[540px] xl:max-w-[560px]"
               >
-                {/* Background Image */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage:
-                      "url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80')",
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                <div className="absolute inset-0">
+                  <img
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"
+                    alt="Digital Transformation for Agencies"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/5" />
                 </div>
 
-                {/* Content */}
-                <div className="relative h-full flex flex-col justify-end p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-white text-sm font-medium">
-                      Innovation
-                    </span>
-                    <span className="text-white text-sm">August 19, 2024</span>
+                <div className="relative flex h-full flex-col justify-end gap-6 p-8 sm:p-10">
+                  <div className="flex items-center justify-between text-sm font-medium text-white/80">
+                    <span className="text-white/90">Innovation</span>
+                    <span className="text-white/90">August 19, 2024</span>
                   </div>
-                  <h2 className="text-4xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors">
+                  <div className="space-y-4">
+                    <h2 className="text-[34px] font-semibold leading-tight text-white transition-colors duration-300 group-hover:text-blue-200 sm:text-[40px]">
                     Digital Transformation for Agencies
-                  </h2>
-                  <p className="text-white/90 text-lg">
-                    Explore how agencies can successfully implement digital
-                    transformation to stay competitive.
-                  </p>
+                    </h2>
+                    <p className="max-w-lg text-base text-white/80 sm:text-lg">
+                      Explore how agencies can successfully implement digital
+                      transformation to stay competitive.
+                    </p>
+                  </div>
                 </div>
               </Link>
             </div>
 
             {/* Small Cards - Right Side */}
-            <div className="lg:col-span-1 flex flex-col gap-8">
+            <div className="flex flex-col gap-11 lg:h-[540px] lg:justify-between">
               {/* Innovation Card */}
               <Link
                 to="/blog/innovation-business-success"
-                className="group block bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow"
+                className="group flex flex-col overflow-hidden rounded-[28px] border border-white/60 bg-white shadow-[0_24px_60px_-35px_rgba(15,23,42,0.6)] transition-shadow hover:shadow-[0_34px_70px_-32px_rgba(15,23,42,0.6)] lg:flex-1 lg:flex-row lg:items-stretch"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="w-full lg:h-full lg:w-[52%] lg:shrink-0">
                   <img
-                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80"
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
                     alt="Innovation"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="h-56 w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 lg:h-full lg:w-full lg:rounded-l-[28px]"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-blue-600 text-sm font-semibold">
-                      Innovation
-                    </span>
-                    <span className="text-gray-500 text-sm">
-                      August 19, 2024
-                    </span>
+                <div className="flex flex-1 flex-col justify-between gap-6 p-7 lg:p-9">
+                  <div className="flex items-center justify-between text-sm font-semibold text-slate-500">
+                    <span className="text-blue-600">Innovation</span>
+                    <span className="text-slate-400">August 19, 2024</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    The Role of Innovation in Business Success
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Understand how innovation is critical for business success
-                    and how to cultivate it.
-                  </p>
+                  <div className="space-y-3">
+                    <h3 className="text-[22px] font-semibold leading-tight text-slate-900 transition-colors group-hover:text-blue-600">
+                      The Role of Innovation in Business Success
+                    </h3>
+                    <p className="text-[15px] leading-snug text-slate-500">
+                      Understand how innovation is critical for business success
+                      and how to cultivate it.
+                    </p>
+                  </div>
                 </div>
               </Link>
 
               {/* Marketing Card */}
               <Link
                 to="/blog/future-business-strategy"
-                className="group block bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow"
+                className="group flex flex-col overflow-hidden rounded-[28px] border border-white/60 bg-white shadow-[0_24px_60px_-35px_rgba(15,23,42,0.6)] transition-shadow hover:shadow-[0_34px_70px_-32px_rgba(15,23,42,0.6)] lg:flex-1 lg:flex-row lg:items-stretch"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="w-full lg:h-full lg:w-[52%] lg:shrink-0">
                   <img
-                    src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=400&q=80"
+                    src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&q=80"
                     alt="Marketing"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="h-56 w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 lg:h-full lg:w-full lg:rounded-l-[28px]"
                   />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-blue-600 text-sm font-semibold">
-                      Marketing
-                    </span>
-                    <span className="text-gray-500 text-sm">
-                      August 19, 2024
-                    </span>
+                <div className="flex flex-1 flex-col justify-between gap-6 p-7 lg:p-9">
+                  <div className="flex items-center justify-between text-sm font-semibold text-slate-500">
+                    <span className="text-blue-600">Marketing</span>
+                    <span className="text-slate-400">August 19, 2024</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                    The Future of Business Strategy
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Explore how evolving business strategies, driven by data and
-                    innovation, are essential for long-term success.
-                  </p>
+                  <div className="space-y-3">
+                    <h3 className="text-[22px] font-semibold leading-tight text-slate-900 transition-colors group-hover:text-blue-600">
+                      The Future of Business Strategy
+                    </h3>
+                    <p className="text-[15px] leading-snug text-slate-500">
+                      Explore how evolving business strategies, driven by data and
+                      innovation, are essential for long-term success.
+                    </p>
+                  </div>
                 </div>
               </Link>
             </div>
