@@ -244,7 +244,7 @@ export default function Home() {
               </p>
             </div>
             <Link
-              to="/marketing"
+              to="/category/marketing"
               className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700"
             >
               View More
@@ -347,7 +347,7 @@ export default function Home() {
               </p>
             </div>
             <Link
-              to="/innovation"
+              to="/category/innovation"
               className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-700"
             >
               View More
