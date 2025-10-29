@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/home";
 import Blogs from "./pages/blogs";
 import BlogSingle from "./pages/blog-single";
+import CategorySingle from "./pages/category-single";
 import NotFound from "./pages/404";
 
 const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/:slug" element={<BlogSingle />} />
+          <Route path="/category/:slug" element={<CategorySingle />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
