@@ -390,14 +390,14 @@ export default function Blogs() {
               <Link
                 key={idx}
                 to={`/category/${cat.name.toLowerCase()}`}
-                className="group rounded-xl border border-gray-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+                className="group rounded-xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:shadow-md hover:border-blue-200"
               >
                 <div className="mb-6 flex justify-center">
-                  <div className="rounded-lg bg-blue-50 p-4">
-                    <cat.icon className="h-8 w-8 text-blue-600" strokeWidth={2} />
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-50 to-blue-100 transition-transform group-hover:scale-110">
+                    <cat.icon className="h-7 w-7 text-blue-600" strokeWidth={1.5} />
                   </div>
                 </div>
-                <h3 className="mb-2 text-center text-lg font-semibold text-gray-900">
+                <h3 className="mb-2 text-center text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
                   {cat.name}
                 </h3>
                 <p className="text-center text-sm text-gray-600">{cat.desc}</p>
