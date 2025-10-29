@@ -237,19 +237,21 @@ export default function BlogSingle() {
                   {/* Featured Post 1 */}
                   <Link
                     to="/blog/innovation"
-                    className="group block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+                    className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md lg:flex-row"
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
-                      alt="The Role of Innovation in Business Success"
-                      className="h-32 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="p-4">
+                    <div className="h-32 w-full overflow-hidden lg:h-auto lg:w-[45%]">
+                      <img
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                        alt="The Role of Innovation in Business Success"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-4">
                       <div className="mb-2 flex items-center justify-between text-xs">
                         <span className="font-semibold text-blue-600">Innovation</span>
                         <span className="text-gray-500">August 19, 2024</span>
                       </div>
-                      <h4 className="text-base font-semibold text-gray-900">
+                      <h4 className="text-base font-semibold leading-tight text-gray-900">
                         The Role of Innovation in Business Success
                       </h4>
                     </div>
@@ -258,19 +260,21 @@ export default function BlogSingle() {
                   {/* Featured Post 2 */}
                   <Link
                     to="/blog/strategy"
-                    className="group block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+                    className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md lg:flex-row"
                   >
-                    <img
-                      src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&q=80"
-                      alt="The Future of Business Strategy"
-                      className="h-32 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="p-4">
+                    <div className="h-32 w-full overflow-hidden lg:h-auto lg:w-[45%]">
+                      <img
+                        src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&q=80"
+                        alt="The Future of Business Strategy"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-4">
                       <div className="mb-2 flex items-center justify-between text-xs">
                         <span className="font-semibold text-blue-600">Marketing</span>
                         <span className="text-gray-500">August 19, 2024</span>
                       </div>
-                      <h4 className="text-base font-semibold text-gray-900">
+                      <h4 className="text-base font-semibold leading-tight text-gray-900">
                         The Future of Business Strategy
                       </h4>
                     </div>
