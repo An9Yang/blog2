@@ -6,6 +6,9 @@ import Index from "./pages/home";
 import Blogs from "./pages/blogs";
 import BlogSingle from "./pages/blog-single";
 import CategorySingle from "./pages/category-single";
+import Contact from "./pages/contact";
+import PrivacyPolicy from "./pages/privacy-policy";
+import TermsOfService from "./pages/terms-of-service";
 import NotFound from "./pages/404";
 
 const queryClient = new QueryClient();
@@ -20,6 +23,9 @@ const App = () => (
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/:slug" element={<BlogSingle />} />
           <Route path="/category/:slug" element={<CategorySingle />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

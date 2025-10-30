@@ -6,12 +6,12 @@ import {
   Linkedin,
   Instagram,
   Mail,
-  ChevronDown,
   Lightbulb,
   Flag,
   Megaphone,
   TrendingUp,
 } from "lucide-react";
+import CategoriesDropdown from "@/components/CategoriesDropdown";
 
 export default function Home() {
   return (
@@ -28,13 +28,7 @@ export default function Home() {
               >
                 Blogs
               </Link>
-              <Link
-                to="/categories"
-                className="group flex items-center gap-1.5 text-sm font-medium text-gray-700 transition-colors hover:text-gray-900"
-              >
-                <span>Categories</span>
-                <ChevronDown className="h-3.5 w-3.5 text-gray-500 transition-transform group-hover:translate-y-0.5" />
-              </Link>
+              <CategoriesDropdown />
               <Link
                 to="/contact"
                 className="text-sm font-medium text-gray-700 transition-colors hover:text-gray-900"
